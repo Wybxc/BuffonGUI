@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
@@ -75,6 +76,13 @@ public class MainController implements Initializable {
         });
         pane.heightProperty().addListener((observable, oldValue, newValue) -> {
             canvas.setHeight(newValue.doubleValue() - 50);
+        });
+
+        numberInput.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                // 当用户按下回车键时触发
+                handleSubmitButtonAction();
+            }
         });
     }
 }
