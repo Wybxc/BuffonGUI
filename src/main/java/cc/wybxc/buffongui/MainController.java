@@ -43,7 +43,11 @@ public class MainController implements Initializable {
         try {
             numOfNeedles = Integer.parseInt(numberInput.getText());
         } catch (NumberFormatException e) {
-            numberOutput.setText("请输入一个整数");
+            numberOutput.setText("请输入一个正整数");
+            return;
+        }
+        if (numOfNeedles <= 0) {
+            numberOutput.setText("请输入一个正整数");
             return;
         }
 
