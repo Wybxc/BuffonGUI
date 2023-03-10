@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cc.wybxc.buffongui.MainController">
+   <top>
+      <HBox alignment="CENTER_LEFT" minHeight="-Infinity" prefHeight="50.0" prefWidth="200.0" spacing="5.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="投针次数:" />
+            <TextField fx:id="numberInput" />
+            <Button mnemonicParsing="false" onAction="#handleSubmitButtonAction" text="开始" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <Label text="估算的 pi 值：" />
+            <Label fx:id="numberOutput" text="0.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </HBox>
+   </top>
+   <center>
+      <Canvas fx:id="canvas" height="430.0" width="640.0" />
+   </center>
+</BorderPane>
